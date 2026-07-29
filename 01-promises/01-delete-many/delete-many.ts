@@ -31,7 +31,7 @@ function deleteUser(userId: string): Promise<User> {
   });
 }
 
-async function deleteUsers(
+export async function deleteUsers(
   userIds: string[],
   reqsPerSecond: number
 ): Promise<SplitPromiseSettledResult<User>> {
@@ -77,11 +77,3 @@ async function safe<T>(
     return [err as Error, undefined];
   }
 }
-
-/******************\
-***** Run Test *****
-\******************/
-
-const result = await deleteUsers(userIds, 0.5);
-console.log('\n\n-------------------------');
-console.log('deleteUsers : result : ', result);
