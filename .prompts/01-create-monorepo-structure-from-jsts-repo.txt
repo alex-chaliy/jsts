@@ -1,0 +1,36 @@
+// 01-create-monorepo-structure-from-jsts-repo
+
+I need to make mono-repo from jsts repo. 
+
+For just running ts files. No frontend build is needed.
+
+I need to use SWC as ts-file builder/compiller.
+I need to use pnpm instead of npm, cos pnpm is faster. 
+
+So root repo will be jsts repo. 
+
+But child mono-repos will be third-level folders, like: 
+01-delete-many, 02-promise-resolve, 01-remove-from-array, 02-add-to-array. 
+
+But second-level folders will not be mono-repos, they will be just as wraper-folders for some mono-repos, 
+e.g. 01-promises folder is just wrapper-folder for mono-repos 01-delete-many and 02-promise-resolve, 
+02-arrays folder is just wrapper-folder for mono-repos 01-remove-from-array and 02-add-to-array.
+
+And also, all mutual dependencies for all mono-repos will be placed in the root package.json, e.g. 'typescript' and 'types/typescript' will be placed in the root package.json,
+But if i need some specific local dependency for some mono-repo (e.g. for monorepo 02-promise-resolve), this dependency will be placed into the mono-repo's package.json (not in the root package.json)
+
+
+So, in the result i need to run a separate sub-project (monorepo) like this (example for 01-delete-many sub-project/monorepo): 
+- open terminal in jsts folder
+> pnpm install // will install all mutual dependencies
+- go to need sub-project folder, like this : 
+> cd 01-promises/01-delete-many
+- install local dependencies for this particular monorepo if they are, like this : 
+> pnpm install
+- make a build, that will create 'dist' folder in 01-promises/01-delete-many folder (in dist folder will be some file like main.js) : 
+> pnpm run build
+- than start builded file like : 
+> pnpm start // it will run main.js from the local 'dist' folder 
+
+
+And also it's need to create gitignore file to exclude folders '.prompts' and 'node_modules' from git commit

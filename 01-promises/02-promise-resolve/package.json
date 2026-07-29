@@ -1,0 +1,8 @@
+{
+  "name": "@jsts/02-promise-resolve",
+  "private": true,
+  "scripts": {
+    "build": "swc . --out-dir dist",
+    "start": "node dist/main.js"
+  }
+}

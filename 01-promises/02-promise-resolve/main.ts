@@ -1,4 +1,8 @@
 import { getUserId } from './promise-resolve';
 
-const result = await getUserId();
-console.log('getUserId : result : ', result);
+async function run() {
+  const result = await getUserId();
+  console.log('getUserId : result : ', result);
+}
+
+void run();

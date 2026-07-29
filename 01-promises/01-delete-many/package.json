@@ -1,0 +1,8 @@
+{
+  "name": "@jsts/01-delete-many",
+  "private": true,
+  "scripts": {
+    "build": "swc . --out-dir dist",
+    "start": "node dist/main.js"
+  }
+}

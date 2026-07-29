@@ -1,0 +1,8 @@
+{
+  "name": "@jsts/01-remove-from-array",
+  "private": true,
+  "scripts": {
+    "build": "swc . --out-dir dist",
+    "start": "node dist/main.js"
+  }
+}
