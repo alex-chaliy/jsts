@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "swc . --out-dir dist",
-    "start": "node dist/main.js"
+    "start": "node dist/main.js",
+    "pract-01": "npm run build && node dist/practices/01-delete-many-instances/main.js"
   }
 }

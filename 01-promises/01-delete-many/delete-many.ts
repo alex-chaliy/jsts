@@ -47,7 +47,6 @@ export async function deleteUsers(
     promises.push(
       promiseDelay(() => deleteUser(userId), currentPromiseDelay)
     );
-    
   });
   const results = await Promise.allSettled(promises);
 
